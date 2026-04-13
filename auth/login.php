@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '../db.php';
 if(isset($_POST['login'])){
     $u = $_POST['username'];
     $p = $_POST['password'];
