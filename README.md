@@ -1,6 +1,7 @@
 # PetShop
 🐾 PetShop Web Application
 Dự án này là một ứng dụng web quản lý cửa hàng thú cưng, được phát triển bằng ngôn ngữ PHP theo mô hình lập trình Hướng đối tượng (OOP). Website cung cấp đầy đủ các tính năng từ quản lý sản phẩm, giỏ hàng đến hệ thống xác thực người dùng và phân quyền quản trị.
+
 🚀 Tính năng nổi bật
 -Xác thực bảo mật: Đăng ký và đăng nhập với mật khẩu được mã hóa (bcrypt).
 
