@@ -57,5 +57,4 @@ if(isset($_POST['add_product'])){
    </form>
 </div>
 </body>
-</head>
 </html>
