@@ -25,8 +25,7 @@ if (session_status() === PHP_SESSION_NONE) {
         </nav>
     </div>
 </header>
-if (session_status() == PHP_SESSION_NONE) { session_start(); }
-?>
+
 <link rel="stylesheet" href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/PetShop/assets/styles.css'; ?>">
 
 <header class="site-header">
