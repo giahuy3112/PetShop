@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 session_start();
 require_once '../classes/Database.php';
 require_once '../classes/User.php';
@@ -44,7 +43,6 @@ if(isset($_POST['update_product'])){
 
     header('location:admin_products.php');
     exit();
-=======
 include '../config/db.php';
 
 if(isset($_GET['update'])){
@@ -70,12 +68,10 @@ if(isset($_POST['update_product'])){
    }
    
    header('location:admin_products.php');
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 }
 ?>
 
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -114,7 +110,6 @@ if(isset($_POST['update_product'])){
         <a href="admin_products.php" class="btn" style="background: gray; display:block; text-align:center; margin-top: 10px;">Hủy bỏ</a>
     </form>
 </section>
-=======
 <html>
 <head>
    <title>Sửa sản phẩm</title>
@@ -132,6 +127,5 @@ if(isset($_POST['update_product'])){
          <a href="admin_products.php" class="btn" style="background: gray;">Hủy bỏ</a>
       </form>
    </section>
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 </body>
 </html>

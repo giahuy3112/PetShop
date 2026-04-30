@@ -4,7 +4,6 @@ require_once '../classes/User.php';
 
 $db = (new Database())->getConnection();
 $userObj = new User($db);
-<<<<<<< HEAD
 $message = '';
 
 if (isset($_POST['register'])) {
@@ -61,7 +60,7 @@ if (isset($_POST['register'])) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/PetShop/includes/footer.php'; ?>
 </body>
 </html>
-=======
+
 $error = "";
 
 if (isset($_POST['register'])) {
@@ -106,4 +105,3 @@ include '../includes/header.php';
 </main>
 
 <?php include '../includes/footer.php'; ?>
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251

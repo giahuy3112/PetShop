@@ -5,7 +5,7 @@ require_once '../classes/User.php';
 
 $db = (new Database())->getConnection();
 $userObj = new User($db);
-<<<<<<< HEAD
+
 $message = '';
 $messageClass = 'message';
 
@@ -13,16 +13,13 @@ if (isset($_GET['success'])) {
     $message = 'Đăng ký thành công! Mời đăng nhập';
     $messageClass = 'message message-success';
 }
-=======
 $message = "";
 
 if (isset($_GET['success'])) $message = "Đăng ký thành công! Mời bạn đăng nhập.";
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 
 if (isset($_POST['login'])) {
     $user = $userObj->login($_POST['username'], $_POST['password']);
     if ($user) {
-<<<<<<< HEAD
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['role'] = $user['role'];
@@ -96,7 +93,6 @@ if (isset($_POST['login'])) {
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/PetShop/includes/footer.php'; ?>
 </body>
 </html>
-=======
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['role'] = $user['role'];
@@ -132,4 +128,3 @@ include '../includes/header.php';
 </main>
 
 <?php include '../includes/footer.php'; ?>
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251

@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
 session_start();
 require_once '../classes/Database.php';
 require_once '../classes/User.php';
@@ -18,7 +18,6 @@ if(isset($_GET['delete'])){
     header('location:admin_products.php');
 }
 ?>
-=======
 include '../config/db.php';
 
 if(isset($_GET['delete'])){
@@ -28,7 +27,6 @@ if(isset($_GET['delete'])){
 }
 ?>
 
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -36,7 +34,6 @@ if(isset($_GET['delete'])){
     <title>Admin - Quản lý sản phẩm</title>
 </head>
 <body>
-<<<<<<< HEAD
     <header class="header">
         <nav class="navbar">
             <a href="admin_products.php" class="btn">Quản lý Sản phẩm</a>
@@ -85,7 +82,6 @@ if(isset($_GET['delete'])){
             </tbody>
         </table>
     </div>
-=======
 <header class="header">
    <nav class="navbar">
       <a href="admin_products.php" class="btn btn-edit">Quản lý Sản phẩm</a>
@@ -131,6 +127,5 @@ function confirmDelete(id) {
     }
 }
 </script>
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 </body>
 </html>

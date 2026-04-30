@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 session_start();
 require_once '../classes/Database.php';
 require_once '../classes/User.php';
@@ -80,7 +79,6 @@ if(isset($_GET['delete'])){
             </tbody>
         </table>
     </section>
-=======
 include '../config/db.php'; // Đảm bảo đường dẫn đúng như trong ảnh ed9440.png
 
 // Xử lý cập nhật trạng thái đơn hàng
@@ -149,6 +147,5 @@ if(isset($_GET['delete'])){
          </tbody>
       </table>
    </section>
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 </body>
 </html>
