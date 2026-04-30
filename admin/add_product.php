@@ -30,6 +30,7 @@ if(isset($_POST['add_product'])){
    if($insert){
       move_uploaded_file($image_tmp_name, $image_folder);
       echo "<script>alert('Thêm sản phẩm thành công!'); window.location.href='admin_products.php';</script>";
+      }
    }
 }
 ?>
