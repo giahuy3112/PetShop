@@ -48,7 +48,7 @@ if(isset($_GET['delete'])){
             </thead>
             <tbody>
                 <?php
-                $select_products = $db->query("SELECT * FROM `roducts`") or die('Query failed');
+                $select_products = $db->query("SELECT * FROM `products`") or die('Query failed');
                 while($row = $select_products->fetch(PDO::FETCH_ASSOC)){
                 ?>
                 <tr>

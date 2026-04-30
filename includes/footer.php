@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <footer class="site-footer">
     <div class="container footer-shell">
         <div>
@@ -16,10 +16,10 @@
         </div>
     </div>
 </footer>
-=======
+
 <footer style="text-align: center; padding: 40px 0; color: var(--muted);">
         <p>&copy; 2024 PetShop Project. All rights reserved.</p>
     </footer>
 </body>
 </html>
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251
+
