@@ -85,4 +85,5 @@ if(isset($_POST['update_product'])){
         <a href="admin_products.php" class="btn" style="background: gray; display:block; text-align:center; margin-top: 10px;">Hủy bỏ</a>
     </form>
 </section>
+</body>
 <html>

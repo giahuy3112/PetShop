@@ -58,16 +58,4 @@ if(isset($_POST['add_product'])){
 </div>
 </body>
 </head>
-<body>
-<div class="container">
-    <h2>Thêm sản phẩm mới</h2>
-    <form action="" method="post" enctype="multipart/form-data" class="admin-form">
-        <input type="text" name="name" placeholder="Tên sản phẩm" required>
-        <input type="number" name="price" placeholder="Giá bán" required>
-        <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" required>
-        <input type="submit" name="add_product" value="Lưu sản phẩm" class="btn btn-success-add">
-        <a href="admin_products.php" class="btn" style="background: gray;">Quay lại</a>
-    </form>
-</div>
-</body>
 </html>
