@@ -1,5 +1,6 @@
 <?php
 session_start();
+<<<<<<< HEAD
 require_once 'classes/Database.php';
 require_once 'classes/User.php';
 include "includes/header.php";
@@ -58,4 +59,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="submit" class="btn btn-primary">Xác nhận đặt hàng</button>
     </form>
 </div>
+=======
+include "includes/header.php";
+
+if (empty($_SESSION['cart'])) {
+    echo "Giỏ hàng trống!";
+    exit;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<h3>Đặt hàng thành công!</h3>";
+    
+    unset($_SESSION['cart']);
+    exit;
+}
+?>
+
+<h2>Thanh toán</h2>
+
+<form method="POST">
+    Tên: <input type="text" name="ten" required><br>
+    Địa chỉ: <input type="text" name="diachi" required><br>
+    <button type="submit">Xác nhận</button>
+</form>
+
+>>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 <?php include "includes/footer.php"; ?>

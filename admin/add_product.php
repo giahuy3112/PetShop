@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 session_start();
 require_once '../classes/Database.php';
 require_once '../classes/User.php';
@@ -9,10 +10,14 @@ if (!User::isLoggedIn() || !User::isAdmin()) {
 }
 
 $db = (new Database())->getConnection();
+=======
+include '../config/db.php';
+>>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 
 if(isset($_POST['add_product'])){
    $name = $_POST['name'];
    $price = $_POST['price'];
+<<<<<<< HEAD
    $category_id = $_POST['category_id']; 
    $image = $_FILES['image']['name'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
@@ -20,15 +25,28 @@ if(isset($_POST['add_product'])){
 
    $stmt = $db->prepare("INSERT INTO `Products`(name, price, image, category_id) VALUES(?, ?, ?, ?)");
    if($stmt->execute([$name, $price, $image, $category_id])){
+=======
+   $image = $_FILES['image']['name'];
+   $image_tmp_name = $_FILES['image']['tmp_name'];
+   $image_folder = 'uploaded_img/'.$image;
+
+   $insert = mysqli_query($conn, "INSERT INTO `products`(name, price, image) VALUES('$name', '$price', '$image')");
+   if($insert){
+>>>>>>> 519422940b574c3a92331d71e16eb2b365698251
       move_uploaded_file($image_tmp_name, $image_folder);
       echo "<script>alert('Thêm sản phẩm thành công!'); window.location.href='admin_products.php';</script>";
    }
 }
 ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <link rel="stylesheet" href="admin_style.css">
+<<<<<<< HEAD
     <title>Thêm sản phẩm</title>
 </head>
 <body>
@@ -49,4 +67,19 @@ if(isset($_POST['add_product'])){
    </form>
 </div>
 </body>
+=======
+</head>
+<body>
+<div class="container">
+    <h2>Thêm sản phẩm mới</h2>
+    <form action="" method="post" enctype="multipart/form-data" class="admin-form">
+        <input type="text" name="name" placeholder="Tên sản phẩm" required>
+        <input type="number" name="price" placeholder="Giá bán" required>
+        <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" required>
+        <input type="submit" name="add_product" value="Lưu sản phẩm" class="btn btn-success-add">
+        <a href="admin_products.php" class="btn" style="background: gray;">Quay lại</a>
+    </form>
+</div>
+</body>s
+>>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 </html>

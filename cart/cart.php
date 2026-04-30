@@ -9,6 +9,7 @@ if (!isset($_SESSION['cart'])) {
 $total = 0;
 ?>
 
+<<<<<<< HEAD
 <div class="container" style="padding: 20px;">
     <h2>Giỏ hàng của bạn</h2>
     <?php if(empty($_SESSION['cart'])): ?>
@@ -31,3 +32,31 @@ $total = 0;
     <?php endif; ?>
 </div>
 <?php include "includes/footer.php"; ?>
+=======
+<h2>Giỏ hàng</h2>
+
+<?php foreach ($_SESSION['cart'] as $id => $item): 
+    $subtotal = $item['gia'] * $item['soluong'];
+    $total += $subtotal;
+?>
+    <div>
+        <?= $item['ten'] ?> - <?= $item['gia'] ?> x <?= $item['soluong'] ?>
+        <a href="cart.php?remove=<?= $id ?>">Xóa</a>
+    </div>
+<?php endforeach; ?>
+
+<h3>Tổng: <?= $total ?> VND</h3>
+
+<a href="checkout.php">
+    <button>Mua hàng</button>
+</a>
+
+<?php include "includes/footer.php"; ?>
+
+<?php
+if (isset($_GET['remove'])) {
+    unset($_SESSION['cart'][$_GET['remove']]);
+    header("Location: cart.php");
+}
+?>
+>>>>>>> 519422940b574c3a92331d71e16eb2b365698251

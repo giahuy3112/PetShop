@@ -1,4 +1,5 @@
 # PetShop
+<<<<<<< HEAD
 🐾 PetShop Web Application
 Dự án này là một ứng dụng web quản lý cửa hàng thú cưng, được phát triển bằng ngôn ngữ PHP theo mô hình lập trình Hướng đối tượng (OOP). Website cung cấp đầy đủ các tính năng từ quản lý sản phẩm, giỏ hàng đến hệ thống xác thực người dùng và phân quyền quản trị.
 
@@ -44,3 +45,5 @@ Quản lý phiên: PHP Session Management.
 4. Chạy ứng dụng:
    -Di chuyển thư mục dự án vào htdocs.
    -Truy cập đường dẫn: http://localhost/PetShop/.
+=======
+>>>>>>> 519422940b574c3a92331d71e16eb2b365698251

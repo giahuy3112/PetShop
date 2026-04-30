@@ -5,6 +5,7 @@ function petshop_product_image(array $product): string
     $name = strtolower((string) ($product['product_name'] ?? ''));
     $combined = $category . ' ' . $name;
 
+<<<<<<< HEAD
     if (
         strpos($combined, 'hamster') !== false
     ) {
@@ -71,6 +72,21 @@ function petshop_product_image(array $product): string
     }
 
     return '/PetShop/assets/photo/dog.jpg';
+=======
+    if (strpos($combined, 'cat') !== false || strpos($combined, 'meo') !== false) {
+        return '/PetShop/assets/images/cat-food.svg';
+    }
+
+    if (strpos($combined, 'access') !== false || strpos($combined, 'day') !== false || strpos($combined, 'toy') !== false) {
+        return '/PetShop/assets/images/accessories.svg';
+    }
+
+    if (strpos($combined, 'hygiene') !== false || strpos($combined, 've sinh') !== false || strpos($combined, 'sand') !== false) {
+        return '/PetShop/assets/images/hygiene.svg';
+    }
+
+    return '/PetShop/assets/images/dog-food.svg';
+>>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 }
 
 function petshop_product_alt(array $product): string
