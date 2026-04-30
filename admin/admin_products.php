@@ -18,14 +18,6 @@ if(isset($_GET['delete'])){
     header('location:admin_products.php');
 }
 ?>
-include '../config/db.php';
-
-if(isset($_GET['delete'])){
-   $delete_id = $_GET['delete'];
-   mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'");
-   header('location:admin_products.php');
-}
-?>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -56,7 +48,7 @@ if(isset($_GET['delete'])){
             </thead>
             <tbody>
                 <?php
-                $select_products = $db->query("SELECT * FROM `Products`") or die('Query failed');
+                $select_products = $db->query("SELECT * FROM `roducts`") or die('Query failed');
                 while($row = $select_products->fetch(PDO::FETCH_ASSOC)){
                 ?>
                 <tr>
