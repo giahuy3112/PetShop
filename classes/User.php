@@ -1,11 +1,7 @@
 <?php
 class User {
     private $conn;
-<<<<<<< HEAD
     private $table = "users";
-=======
-    private $table = "Users";
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251
 
     public function __construct($db) {
         $this->conn = $db;

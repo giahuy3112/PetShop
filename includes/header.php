@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -26,8 +25,6 @@ if (session_status() === PHP_SESSION_NONE) {
         </nav>
     </div>
 </header>
-
-=======
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 ?>
 <link rel="stylesheet" href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/PetShop/assets/styles.css'; ?>">
@@ -49,4 +46,3 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
         </nav>
     </div>
 </header>
->>>>>>> 519422940b574c3a92331d71e16eb2b365698251
