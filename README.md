@@ -1,4 +1,5 @@
 # PetShop
+
 🐾 PetShop Web Application
 Dự án này là một ứng dụng web quản lý cửa hàng thú cưng, được phát triển bằng ngôn ngữ PHP theo mô hình lập trình Hướng đối tượng (OOP). Website cung cấp đầy đủ các tính năng từ quản lý sản phẩm, giỏ hàng đến hệ thống xác thực người dùng và phân quyền quản trị.
 
@@ -12,7 +13,7 @@ Dự án này là một ứng dụng web quản lý cửa hàng thú cưng, đư
 -Giỏ hàng & Thanh toán: Quy trình mua hàng khép kín từ thêm sản phẩm đến thanh toán đơn hàng.
 
 -Giao diện Responsive: Tương thích hoàn hảo trên mọi thiết bị (Mobile, Tablet, Desktop) nhờ CSS Grid & Flexbox.
- 
+
   👥 Phân công nhiệm vụ (Project Members)
   Dự án được thực hiện với sự phối hợp chặt chẽ giữa các thành viên:
   Member 1: Database + Auth
@@ -36,8 +37,9 @@ Giao diện: HTML5, CSS3 (Sử dụng CSS Variables & Glassmorphism).
 Quản lý phiên: PHP Session Management.
 
 💻 Hướng dẫn cài đặt
+
 1. Chuẩn bị môi trường: Sử dụng XAMPP, WAMP hoặc Laragon (Hỗ trợ PHP 7.4 trở lên).
-2. Clone dự án: git clone https://github.com/username/PetShop.git
+2. Clone dự án: git clone https://github.com/bonhiki1233-code/PetShop.git
 3. Cấu hình Database:
    -Tạo cơ sở dữ liệu petshop_db.
    -Cập nhật thông tin truy cập (host, user, pass) trong file /classes/Database.php.

@@ -1,9 +1,9 @@
 <?php
-include '../config/db.php';
+include '../database/config/db.php';
 
 if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];
-   mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'");
+   mysqli_query($conn, "DELETE FROM `Products` WHERE product_id = '$delete_id'");
    header('location:admin_products.php');
 }
 ?>
@@ -36,16 +36,16 @@ if(isset($_GET['delete'])){
         </thead>
         <tbody>
             <?php
-            $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+            $select_products = mysqli_query($conn, "SELECT * FROM `Products`") or die('query failed');
             while($row = mysqli_fetch_assoc($select_products)){
             ?>
             <tr>
-                <td><img src="../uploaded_img/<?php echo $row['image']; ?>" width="50" height="50" style="object-fit: cover; border-radius: 5px;" alt="Hình ảnh"></td>
-                <td><?php echo $row['name']; ?></td>
-                <td><?php echo number_format($row['price']); ?>đ</td>
+                <td><img src="../uploaded_img/<?php echo $row['image_url']; ?>" ...></td>
+                <td><?php echo $row['product_name']; ?></td>
+                <td><?php echo number_format($row['price_new']); ?>đ</td>
                 <td>
-                    <a href="edit_product.php?update=<?php echo $row['id']; ?>" class="btn btn-edit">Sửa</a>
-                    <a href="javascript:void(0);" onclick="confirmDelete(<?php echo $row['id']; ?>)" class="btn btn-delete">Xóa</a>
+                    <a href="edit_product.php?update=<?php echo $row['product_id']; ?>" class="btn btn-edit">Sửa</a>
+                    <a href="javascript:void(0);" onclick="confirmDelete(<?php echo $row['product_id']; ?>)" class="btn btn-delete">Xóa</a>
                 </td>
             </tr>
             <?php } ?>

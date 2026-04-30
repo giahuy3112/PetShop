@@ -1,5 +1,5 @@
 <?php
-include '../config/db.php';
+include '../database/config/db.php';
 
 if(isset($_POST['add_product'])){
    $name = $_POST['name'];
@@ -8,7 +8,7 @@ if(isset($_POST['add_product'])){
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = 'uploaded_img/'.$image;
 
-   $insert = mysqli_query($conn, "INSERT INTO `products`(name, price, image) VALUES('$name', '$price', '$image')");
+   $insert = mysqli_query($conn, "INSERT INTO `Products`(product_name, price_new, image_url, category_id) VALUES('$name', '$price', '$image', 1)");
    if($insert){
       move_uploaded_file($image_tmp_name, $image_folder);
       echo "<script>alert('Thêm sản phẩm thành công!'); window.location.href='admin_products.php';</script>";

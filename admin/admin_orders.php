@@ -1,17 +1,17 @@
 <?php
-include '../config/db.php'; // Đảm bảo đường dẫn đúng như trong ảnh ed9440.png
+include '../database/config/db.php'; // Đảm bảo đường dẫn đúng như trong ảnh ed9440.png
 
 // Xử lý cập nhật trạng thái đơn hàng
 if(isset($_POST['update_order'])){
    $order_id = $_POST['order_id'];
    $update_status = $_POST['update_status'];
-   mysqli_query($conn, "UPDATE `orders` SET status = '$update_status' WHERE id = '$order_id'");
+   mysqli_query($conn, "UPDATE `Orders` SET order_status = '$update_status' WHERE order_id = '$order_id'");
 }
 
 // Xử lý xóa đơn hàng
 if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];
-   mysqli_query($conn, "DELETE FROM `orders` WHERE id = '$delete_id'");
+   mysqli_query($conn, "DELETE FROM `Orders` WHERE order_id = '$delete_id'");
    header('location:admin_orders.php');
 }
 ?>
@@ -41,26 +41,30 @@ if(isset($_GET['delete'])){
          </thead>
          <tbody>
             <?php
-            $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
+            $select_orders = mysqli_query($conn, "SELECT Orders.*, Users.username FROM `Orders` LEFT JOIN `Users` ON Orders.user_id = Users.user_id") or die('query failed');
             while($fetch_orders = mysqli_fetch_assoc($select_orders)){
             ?>
             <tr>
-               <td><?php echo $fetch_orders['user_name']; ?></td>
-               <td><?php echo $fetch_orders['number']; ?></td>
-               <td><?php echo number_format($fetch_orders['total_price']); ?>đ</td>
+            <td>#<?php echo $fetch_orders['order_id']; ?></td>
+            <td><?php echo $fetch_orders['username']; ?></td>
+            <td><?php echo number_format($fetch_orders['total_amount']); ?>đ</td>
+            <td><?php echo $fetch_orders['order_date']; ?></td>
+            <td>
                <td>
-                  <form action="" method="post">
-                     <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
-                     <select name="update_status">
-                        <option value="" selected disabled><?php echo $fetch_orders['status']; ?></option>
-                        <option value="Đang xử lý">Đang xử lý</option>
-                        <option value="Đã hoàn thành">Đã hoàn thành</option>
-                     </select>
-                     <input type="submit" name="update_order" value="Cập nhật" class="btn btn-add">
-                  </form>
+               <form action="" method="post">
+                  <input type="hidden" name="order_id" value="<?php echo $fetch_orders['order_id']; ?>">
+                  <select name="update_status">
+                     <option value="" selected disabled><?php echo $fetch_orders['order_status']; ?></option>
+                     <option value="PENDING">PENDING</option>
+                     <option value="SHIPPING">SHIPPING</option>
+                     <option value="DELIVERED">DELIVERED</option>
+                     <option value="CANCELED">CANCELED</option>
+                  </select>
+                  <input type="submit" name="update_order" value="Cập nhật" class="btn btn-add">
+               </form>
                </td>
                <td>
-                  <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" class="btn btn-delete" onclick="return confirm('Xóa đơn hàng này?');">Xóa</a>
+                  <a href="admin_orders.php?delete=<?php echo $fetch_orders['order_id']; ?>" class="btn btn-delete" onclick="return confirm('Xóa đơn hàng này?');">Xóa</a>
                </td>
             </tr>
             <?php } ?>
